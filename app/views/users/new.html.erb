@@ -1,0 +1,105 @@
+<div class="dialog signup">
+<div class="content-wrap">
+			<div class="box-wrap">
+				<div class="box">
+					<h1>Start your 30-Day Free Trial</h1>
+					<p><em>Everything is fully functional. No credit card is required</em></p>
+<% @user.password = @user.password_confirmation = nil %>
+					<%= form_for :user, :url => users_path do |f| -%>
+						<fieldset class="share-line">
+						<label>Login</label>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+
+			<%= f.text_field :login %>
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :login%></font></div>
+		<div class="box-bottom-right"></div>
+	</div>
+							<label>First Name</label>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+
+			<%= f.text_field :name %>
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :name%></font></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								<label>Last Name</label>
+								<div class="input-wrapper text-wrapper ">
+
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= f.text_field :lastname %>
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :lastname%></font></div>
+		<div class="box-bottom-right"></div>
+
+	</div>
+
+								<label>Email</label>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= f.text_field :email %>
+
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :email%></font></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								<label>Password</label>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= f.password_field :password %>
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :password%></font></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								<label>Confirmation Password</label>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= f.password_field :password_confirmation %>
+		</div>
+
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"><font color='red'><%=error_message_on :user, :password_confirmation%></font></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								
+								
+
+							<p class="fine-print">By clicking <em>'Create my account,'</em> you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a>.</p>
+							
+							<%= submit_tag 'Sign up',:class=>'btn-47 create-account-btn' %>
+						</fieldset>
+					<%end%>
+				</div>
+			</div>
+		</div>
+		</div>

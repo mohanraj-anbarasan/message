@@ -1,0 +1,68 @@
+<div class="posts">
+<%= javascript_include_tag "prototype.js" %>
+<%= javascript_include_tag "control_modal.js" %>
+
+
+ <%= stylesheet_link_tag "control_modal"%>
+
+ <%= javascript_include_tag "effects.js"%>
+<%= javascript_include_tag "dragdrop.js"%>
+<%= javascript_include_tag "scriptaculous.js"%>
+<%= javascript_include_tag "builder.js"%> 
+<%= javascript_include_tag "controls.js"%>
+<%= javascript_include_tag "application.js" %>
+<div class="container">
+	<div class="width-wrapper">
+		<div id="people-permissions" class="left-col main-content">
+			<ul class="nav-tabs">
+				<li><a href=<%=dashboard_url%>>Dashboard</a><div class="tab-right"></div></li>				
+				<li><a href=<%=inbox_url%>>Inbox</a><div class="tab-right"></div></li>
+				<li class="active"><a href=<%=employee_url%>>Employees</a><div class="tab-right"></div></li>
+			</ul>
+			<div class="box-top-left"></div>
+			<div class="box-top"></div>
+			<div class="box-top-right"></div>
+			<div class="main-padder">
+				<div class="dash-box">
+					<h2 class="header-bar">People &amp; Permissions</h2>
+					<div class="padder dark-bg">
+						<ul class="contact-list">
+						<%@employee.each do |employee|%>
+						<%if employee.id!=current_user.id%>
+							<li class="card">							
+								<div class="header avatar-header">
+									<img class="avatar" alt="Avatar" src="images/users/user1.jpg" />
+									<h4><%= link_to employee.login, "/message/#{employee.id}" ,:id=>"list_#{employee.id}",:remote=>'true'%></h4>
+									
+									<p class="desc">Director</p>
+									<a class="f-rgt btn ir edit-icon" href="/profile-edit" title="Edit"><span>Mail</span></a>				
+								</div>
+							</li>
+							<%end%> 
+								<%end%>   
+						</ul>
+					</div>
+				</div>
+			</div> <!-- end main-padder -->
+			<div class="box-bottom-left"></div>
+			<div class="box-bottom"></div>
+			<div class="box-bottom-right"></div>
+		</div>
+	</div>
+
+	
+</div>
+<div id="footer" class="width-wrapper">
+	<p class="left-col"></p>
+
+</div>
+<!--[if IE 6]>
+<script type="text/javascript">
+    /*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; }
+    var IE6UPDATE_OPTIONS = {
+        icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+    }
+</script>
+<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+<![endif]-->
+</div>

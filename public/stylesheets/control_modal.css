@@ -1,0 +1,20 @@
+#modal_container {  
+background-color:white;
+color:black;
+font-family:"Lucida Grande",Verdana;
+font-size:12px;
+padding:5px;
+text-align:left;
+width: 404px;
+height: 300px;
+
+}
+
+
+
+#modal_overlay {  
+background-color:grey;
+}  
+
+
+

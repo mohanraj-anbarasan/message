@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Sign up*/
+.signup{
+position:absolute;	
+left:0px;
+width:1300px;
+text-align:center;
+
+}
+.signup h2 a{color:#FFFFFF; text-decoration:none;}
+
+.signup h2 a span{padding:0 16px 0 16px;}
+
+#signup-warp{text-align:center;}

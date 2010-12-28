@@ -1,0 +1,16 @@
+.lightbox_header {
+border-bottom:3px solid #D6E2ED;
+color:#406481;
+float:left;
+font-size:14px;
+font-weight:bold;
+//margin:15px 0 0 20px;
+padding-bottom:5px;
+width:383px;
+}
+
+.light_box_close a{
+float:right;
+margin:0px;
+padding:0px;
+}

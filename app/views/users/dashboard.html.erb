@@ -1,0 +1,49 @@
+<div class="posts">
+<div class="container">
+	<div class="width-wrapper">
+		<div id="posts" class="left-col main-content">
+			<ul class="nav-tabs">
+				<li class="active"><a href=<%=dashboard_url%>>Dashboard</a><div class="tab-right"></div></li>               
+				<li ><h1><a href=<%=inbox_url%>>Inbox</a></h1><div class="tab-right"></div></li>
+				<li ><h1><a href=<%=employee_url%>>Employees</a></h1><div class="tab-right"></div></li>
+			</ul>
+			<div class="box-top-left"></div>
+			<div class="box-top"><font color="green"><p align="center"><%=flash[:notice]%></p></font></div>
+			<div class="box-top-right"></div>
+			<div class="main-padder">
+				<div class="dash-box">
+
+					<h2 class="header-bar">Posts</h2>
+					<div class="header-tools">
+						
+					</div>
+				</div>
+				<%@messages_dashboard.each do |dash|%>
+				<div id="post-1">
+					<div class="avatar-header topless">
+						<img alt="user1" src="images/users/user1.jpg" />
+						<h3><a href="/post-view">Nike Rebranding Proposal with Coca-Cola</a></h3>
+						<p class="desc"><strong>Last comment by Stuart B.</strong> on Thursday, August 26</p>
+					</div>
+					<div class="post-body">
+						<p><%=dash.message%></p>
+					</div>
+
+					<div class="post-footer">
+                    	<p ><strong>Publish:<%=User.find_by_id(dash.user_id).name%></strong></p>
+						<div class="box-bottom-left"></div>
+						<div class="box-bottom-right"></div>
+					</div>
+				</div>
+				<%end%>
+				<%=will_paginate @messages_dashboard%>
+<!--[if IE 6]>
+<script type="text/javascript">
+    /*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; }
+    var IE6UPDATE_OPTIONS = {
+        icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+    }
+</script>
+<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+<![endif]-->
+</div>

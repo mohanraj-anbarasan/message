@@ -1,0 +1,46 @@
+<div class="dialog login">
+<div class="content-wrap">
+			<div class="box-wrap">
+				<div class="box">
+					<h1>Log in to your account</h1>
+					<p><font color="red"><%=flash[:notice]%></font></p>
+					<%= form_tag session_path do -%>
+
+						<fieldset class="share-line">
+							<%= label_tag 'login' %>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= text_field_tag 'login', @login %>
+
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								<%= label_tag 'password' %>
+								<div class="input-wrapper text-wrapper ">
+		<div class="box-top-left"></div>
+
+		<div class="box-top"></div>
+		<div class="box-top-right"></div>
+		<div class="box-body">
+			<%= password_field_tag 'password', nil %>
+		</div>
+		<div class="box-bottom-left"></div>
+		<div class="box-bottom"></div>
+		<div class="box-bottom-right"></div>
+	</div>
+
+								<label id="remember-me"><input type="checkbox" />Remember me on this computer</label>
+							<a id="forgot-link" href="/forgot">Forgot password?</a>							
+							<%= submit_tag 'Log in',:class=>'btn-47 login-btn' %>
+						</fieldset>
+					<% end -%>
+				</div>
+			</div>
+			</div>
+		</div>

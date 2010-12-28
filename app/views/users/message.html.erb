@@ -1,0 +1,13 @@
+
+	 <%= stylesheet_link_tag "control_modal"%>
+ <%= stylesheet_link_tag "default"%>
+<div style="background-color:#FFFFFF; border:1px solid #CDD3D8; float:left; width:404px;height:300px;">
+
+<div class="light_box_close"><a onclick="document.getElementById('modal_container').style.display='none';document.getElementById('modal_overlay').style.display='none'" href="javascript:void(0)"><img alt="close" src="/images/delete.png"></a></div>
+<div class="lightbox_header">Message to: <%= @employee.login%></div>
+<% form_tag(create1_path, :method=>'post', :multipart => true) do %>
+   <%=text_area_tag "message", "", :size=>"45x6"  %>
+   <input name="user_id" type="hidden" value=<%=@employee.id%> />
+   <%= submit_tag 'Submit' %>
+<% end %>
+</div>
